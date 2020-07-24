@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lapho Nation</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <!-- Container and title -->
+  <div class="container my-4">
+    <h1 class="my-4 text-center text-primary">Logged in As Lapho</h1>
+    <!-- buttons for chatrooms -->
+    <div class="chat-rooms mb-3 text-center">
+      <!-- <div class="my-2">Uyayizwa LeShandisi:</div> -->
+      <button class="btn btn-success" id="General">Log Out Sbali</button>
+      <!-- <button class="btn btn-success" id="Gaming">Gaming</button>
+      <button class="btn btn-success" id="Music">Music</button>
+      <button class="btn btn-success" id="Ninjas">Nation</button> -->
+    </div>
+    <!-- chat list / window -->
+    <div class="chat-window">
+      <ul class="chat-list list-group"></ul>
+    </div>
+    <!-- new chat form -->
+    <form class="new-chat my-3">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <div class="input-group-text">Your message:</div>
+        </div>
+        <input type="text" id="message" class="form-control" required />
+        <div class="input-group-append">
+          <input type="submit" class="btn btn-primary" value="send" />
+        </div>
+      </div>
+    </form>
+    <!-- update name form -->
+    <form class="new-name my-3">
+      <!--New name user defined-->
+      <!-- <div class="input-group">
+        <div class="input-group-prepend">
+          <div class="input-group-text">Update name:</div>
+        </div>
+        <input type="text" id="name" class="form-control" required />
+        <div class="input-group-append">
+          <input type="submit" class="btn btn-primary" value="update" />
+        </div>
+      </div> -->
+      <div class="update-mssg"></div>
+    </form>
+  </div>
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-firestore.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-analytics.js"></script>
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyBxMr-HUI3hvQBj-8dPaCjMbVCUOcbTUgE",
+      authDomain: "lapho-nation-731ba.firebaseapp.com",
+      databaseURL: "https://lapho-nation-731ba.firebaseio.com",
+      projectId: "lapho-nation-731ba",
+      storageBucket: "lapho-nation-731ba.appspot.com",
+      messagingSenderId: "472978915461",
+      appId: "1:472978915461:web:2d722d9eaa8e9a2ec2a9ec",
+      measurementId: "G-5MHS4ZQRLK",
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+
+    const db = firebase.firestore();
+  </script>
+  <script src="http://cdn.date-fns.org/v1.9.0/date_fns.min.js"></script>
+  <script src="scripts/chat.js"></script>
+  <script src="scripts/ui.js"></script>
+  <script src="scripts/main.js"></script>
+</body>
+
+</html>
